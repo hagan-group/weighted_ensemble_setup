@@ -16,21 +16,9 @@ fi
 cd $WEST_SIM_ROOT
 source env.sh
 echo $PWD
-# Make a temporary file in which to store output from the python script
-#COMDIST=$(mktemp)
-#echo $COMDIST
-# Use a custom python script to calculate the distance between the Na+ and Cl-
-# ions. This script looks for files named 'nacl.psf' and 'seg.dcd'.
-#python $WEST_SIM_ROOT/commonfiles/combo_pc_init.py > pcAA.dat
-#echo $COMDIST
-#NAFRAC= $(mktemp)
-#echo $NAFRAC
-#python $WEST_SIM_ROOT/commonfiles/comboBC_pc_init.py > pcBC.dat
+#python script to calculate progress coordinate for starting state
 python $WEST_SIM_ROOT/commonfiles/sum_interface_init.py > pc.dat
 
-#echo $NAFRAC
-# Pipe the relevant part of the output file (the distance) to $WEST_PCOORD_RETURN
-# WEST_PCOORD_RETURN=$(tail -n 1 $DIST)
 tail -n 1 pc.dat > $WEST_PCOORD_RETURN
 echo $WEST_PCOORD_RETURN
 # Remove the temporary file to clean up

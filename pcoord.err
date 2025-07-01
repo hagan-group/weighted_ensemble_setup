@@ -1,2 +1,30 @@
-/home1/09816/smritipradhan/miniconda3/envs/westpa_0.09/lib/python3.12/site-packages/MDAnalysis/topology/PDBParser.py:331: UserWarning: Element information is missing, elements attribute will not be populated. If needed these can be guessed using MDAnalysis.topology.guessers.
-  warnings.warn("Element information is missing, elements attribute "
+Traceback (most recent call last):
+  File "/Users/smritipradhan/Documents/github/weighted_ensemble_setup/commonfiles/sum_interface_init.py", line 5, in <module>
+    ref=mda.Universe(home_dire+'/abcd_capsid.pdb')
+  File "/Users/smritipradhan/miniconda3/envs/westpa/lib/python3.9/site-packages/MDAnalysis/core/universe.py", line 346, in __init__
+    topology = _topology_from_file_like(self.filename,
+  File "/Users/smritipradhan/miniconda3/envs/westpa/lib/python3.9/site-packages/MDAnalysis/core/universe.py", line 118, in _topology_from_file_like
+    raise sys.exc_info()[1] from err
+  File "/Users/smritipradhan/miniconda3/envs/westpa/lib/python3.9/site-packages/MDAnalysis/core/universe.py", line 110, in _topology_from_file_like
+    topology = p.parse(**kwargs)
+  File "/Users/smritipradhan/miniconda3/envs/westpa/lib/python3.9/site-packages/MDAnalysis/topology/PDBParser.py", line 207, in parse
+    top = self._parseatoms()
+  File "/Users/smritipradhan/miniconda3/envs/westpa/lib/python3.9/site-packages/MDAnalysis/topology/PDBParser.py", line 244, in _parseatoms
+    with util.openany(self.filename) as f:
+  File "/Users/smritipradhan/miniconda3/envs/westpa/lib/python3.9/contextlib.py", line 119, in __enter__
+    return next(self.gen)
+  File "/Users/smritipradhan/miniconda3/envs/westpa/lib/python3.9/site-packages/MDAnalysis/lib/util.py", line 318, in openany
+    stream = anyopen(datasource, mode=mode, reset=reset)
+  File "/Users/smritipradhan/miniconda3/envs/westpa/lib/python3.9/site-packages/MDAnalysis/lib/util.py", line 397, in anyopen
+    stream = _get_stream(datasource, openfunc, mode=mode)
+  File "/Users/smritipradhan/miniconda3/envs/westpa/lib/python3.9/site-packages/MDAnalysis/lib/util.py", line 439, in _get_stream
+    raise sys.exc_info()[1] from err
+  File "/Users/smritipradhan/miniconda3/envs/westpa/lib/python3.9/site-packages/MDAnalysis/lib/util.py", line 433, in _get_stream
+    stream = openfunction(filename, mode=mode)
+  File "/Users/smritipradhan/miniconda3/envs/westpa/lib/python3.9/site-packages/MDAnalysis/lib/picklable_file_io.py", line 478, in bz2_pickle_open
+    binary_file = BZ2Picklable(name, bz_mode)
+  File "/Users/smritipradhan/miniconda3/envs/westpa/lib/python3.9/site-packages/MDAnalysis/lib/picklable_file_io.py", line 266, in __init__
+    super().__init__(name, mode)
+  File "/Users/smritipradhan/miniconda3/envs/westpa/lib/python3.9/bz2.py", line 85, in __init__
+    self._fp = _builtin_open(filename, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/smritipradhan/Documents/github/weighted_ensemble_setup/abcd_capsid.pdb'
